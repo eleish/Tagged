@@ -69,3 +69,7 @@ dependencies {
 2 - In build.gradle (project) add the required repositories
 
 ```maven { url 'https://jitpack.io' }```
+
+License
+-------
+Apache 2.0. See the [LICENSE](https://github.com/eleish/Tagged/blob/master/LICENSE) file for details.
