@@ -22,7 +22,7 @@ you can also pass in your custom tag
 class SampleFragmentTwo : Fragment()
 ```
 
-rebuild your project and you will find your generated tags in tagged.generated.Tags.kt file
+rebuild your project and you will find your generated Tags.kt file in the java(generated) folder under tagged.generated
 
 ```
 package tagged.generated
