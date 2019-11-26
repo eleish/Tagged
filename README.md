@@ -18,8 +18,15 @@ class SampleFragmentOne: Fragment()
 you can also pass in your custom tag
 
 ```
-@Tagged("MyCustomTag")
+@Tagged(customTag = "MyCustomTag")
 class SampleFragmentTwo : Fragment()
+```
+
+and you can also pass in your custom tag val name to prevent changes after refactoring a fragment name
+
+```
+@Tagged(customValName = "MyCustomValName")
+class SampleFragmentThree : Fragment()
 ```
 
 rebuild your project and you will find your generated Tags.kt file in the java(generated) folder under tagged.generated
@@ -28,6 +35,8 @@ rebuild your project and you will find your generated Tags.kt file in the java(g
 package tagged.generated
 
 import kotlin.String
+
+const val MyCustomValName: String = "com.mohamedeleish.tagged.sample.SampleFragmentThree"
 
 const val SAMPLE_FRAGMENT_ONE_TAG: String = "com.mohamedeleish.tagged.sample.SampleFragmentOne"
 
@@ -68,7 +77,13 @@ dependencies {
 
 2 - In build.gradle (project) add the required repositories
 
-```maven { url 'https://jitpack.io' }```
+```
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
 
 License
 -------
