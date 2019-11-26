@@ -37,7 +37,7 @@ class TaggedProcessor : AbstractProcessor() {
             val fileSpecBuilder = FileSpec.builder("tagged.generated", "Tags")
 
             roundEnvironment.getElementsAnnotatedWith(Tagged::class.java)?.forEach {
-                val tagName = getSnakeCaseStringFrom(it.simpleName.toString()) + "_TAG"
+                val tagName = getTagValNameFor(it)
                 val tagValue = getTagFor(it)
 
                 fileSpecBuilder
@@ -64,6 +64,13 @@ class TaggedProcessor : AbstractProcessor() {
 
     override fun getSupportedSourceVersion(): SourceVersion {
         return SourceVersion.latest()
+    }
+
+    private fun getTagValNameFor(element: Element): String {
+        val taggedAnnotation = element.getAnnotation(Tagged::class.java)
+        val customValName = taggedAnnotation.customValName
+        return if (customValName.isNotEmpty()) customValName
+        else getSnakeCaseStringFrom(element.simpleName.toString()) + "_TAG"
     }
 
     private fun getTagFor(element: Element): String {
