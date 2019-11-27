@@ -1,17 +1,18 @@
 package com.mohamedeleish.tagged.processor
 
-import com.google.auto.service.AutoService
 import com.mohamedeleish.tagged.annotation.Tagged
 import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.PropertySpec
 import java.io.File
-import javax.annotation.processing.*
+import javax.annotation.processing.AbstractProcessor
+import javax.annotation.processing.RoundEnvironment
+import javax.annotation.processing.SupportedOptions
+import javax.annotation.processing.SupportedSourceVersion
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.Element
 import javax.lang.model.element.TypeElement
 
-@AutoService(Processor::class)
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedOptions(TaggedProcessor.KAPT_KOTLIN_GENERATED_OPTION_NAME)
 class TaggedProcessor : AbstractProcessor() {
