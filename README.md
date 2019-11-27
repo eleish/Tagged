@@ -60,16 +60,10 @@ android {
             }
         }
      } 
-       
-    // 3 - Add java target compile options
-    compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-    }
 }  
    
 dependencies { 
-    // 4 - Add the library dependancy
+    // 3 - Add the library dependancy
     implementation 'com.github.eleish:Tagged:1.0.0'
     kapt 'com.github.eleish:Tagged:1.0.0'
 }
