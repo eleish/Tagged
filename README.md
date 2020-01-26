@@ -64,8 +64,8 @@ android {
    
 dependencies { 
     // 3 - Add the library dependancy
-    implementation 'com.github.eleish:Tagged:1.0.0'
-    kapt 'com.github.eleish:Tagged:1.0.0'
+    implementation 'com.github.eleish:Tagged:1.1.1'
+    kapt 'com.github.eleish:Tagged:1.1.1'
 }
 ```
 
